@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="4k4-I3-vaO">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="MQB-iY-au2">
+            <objects>
+                <viewController id="4k4-I3-vaO" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ohU-ES-bHL"/>
+                        <viewControllerLayoutGuide type="bottom" id="EeC-3a-ILp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gKl-MJ-aTI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="w40-pY-DPn" customClass="FadeOverImageView">
+                                <rect key="frame" x="16" y="20" width="343" height="343"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="w40-pY-DPn" secondAttribute="height" multiplier="1:1" id="daZ-du-c07"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="duration">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.10000000000000001" maxValue="3" translatesAutoresizingMaskIntoConstraints="NO" id="vWv-Jy-RhV">
+                                <rect key="frame" x="14" y="371" width="347" height="31"/>
+                                <connections>
+                                    <action selector="onSliderValueChanged:" destination="4k4-I3-vaO" eventType="valueChanged" id="2ev-60-pJD"/>
+                                </connections>
+                            </slider>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Esi-V2-DCQ">
+                                <rect key="frame" x="16" y="409" width="199" height="20"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Animation Duration (Seconds) :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ynP-o5-KGD">
+                                        <rect key="frame" x="0.0" y="0.0" width="177" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="Pwt-CU-qve"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="1.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mo0-UB-1oQ">
+                                        <rect key="frame" x="181" y="0.0" width="18" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="37E-QP-YW9"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Cxe-TN-LSW">
+                                <rect key="frame" x="16" y="445" width="343" height="29"/>
+                                <segments>
+                                    <segment title="Empty"/>
+                                    <segment title="Local"/>
+                                    <segment title="Remote"/>
+                                </segments>
+                                <connections>
+                                    <action selector="onSegmentControlValueChanged:" destination="4k4-I3-vaO" eventType="valueChanged" id="mws-i2-1Kc"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="w40-pY-DPn" firstAttribute="top" secondItem="ohU-ES-bHL" secondAttribute="bottom" id="6aO-rq-Twv"/>
+                            <constraint firstItem="vWv-Jy-RhV" firstAttribute="top" secondItem="w40-pY-DPn" secondAttribute="bottom" constant="8" id="Tko-qK-Oc1"/>
+                            <constraint firstItem="Esi-V2-DCQ" firstAttribute="leading" secondItem="gKl-MJ-aTI" secondAttribute="leading" constant="16" id="X59-dI-ehr"/>
+                            <constraint firstItem="Cxe-TN-LSW" firstAttribute="top" secondItem="Esi-V2-DCQ" secondAttribute="bottom" constant="16" id="Ypx-xI-cys"/>
+                            <constraint firstItem="vWv-Jy-RhV" firstAttribute="leading" secondItem="gKl-MJ-aTI" secondAttribute="leading" constant="16" id="a5G-AV-mPr"/>
+                            <constraint firstItem="Cxe-TN-LSW" firstAttribute="leading" secondItem="gKl-MJ-aTI" secondAttribute="leading" constant="16" id="evw-eZ-g7I"/>
+                            <constraint firstAttribute="trailing" secondItem="Cxe-TN-LSW" secondAttribute="trailing" constant="16" id="f10-NO-VRR"/>
+                            <constraint firstItem="w40-pY-DPn" firstAttribute="leading" secondItem="gKl-MJ-aTI" secondAttribute="leadingMargin" id="h47-fy-p2a"/>
+                            <constraint firstItem="Esi-V2-DCQ" firstAttribute="top" secondItem="vWv-Jy-RhV" secondAttribute="bottom" constant="8" id="tyV-zA-jCN"/>
+                            <constraint firstAttribute="trailing" secondItem="vWv-Jy-RhV" secondAttribute="trailing" constant="16" id="vd0-cu-F5X"/>
+                            <constraint firstItem="w40-pY-DPn" firstAttribute="trailing" secondItem="gKl-MJ-aTI" secondAttribute="trailingMargin" id="w5G-hf-PGu"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="durationLabel" destination="mo0-UB-1oQ" id="p9r-kV-jYY"/>
+                        <outlet property="imageView" destination="w40-pY-DPn" id="TRc-eh-nKC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g8v-za-8yx" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="244.5" y="312.5"/>
+        </scene>
+    </scenes>
+</document>
